@@ -1,0 +1,34 @@
+{
+    "appointments": [
+        {
+            "id": 1,
+            "buildingId": 51,
+            "boilerId": 35,
+            "technician": 1602769488
+        },
+        {
+            "id": 2,
+            "buildingId": 74,
+            "boilerId": 67,
+            "technician": 1593566726
+        },
+        {
+            "id": 3,
+            "buildingId": 87,
+            "boilerId": 95,
+            "technician": 1581982141
+        },
+        {
+            "id": 4,
+            "buildingId": 74,
+            "boilerId": 42,
+            "technician":1577929214
+        },
+        {
+            "id": 5,
+            "buildingId": 58,
+            "boilerId": 46,
+            "technician":1584396721
+        }
+    ]
+}
