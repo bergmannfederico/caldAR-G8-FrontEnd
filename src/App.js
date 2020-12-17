@@ -32,6 +32,20 @@ class App extends Component {
       }
   }
 
+  // Edit Appointment
+    editAppointment = (appointment) => {
+        console.log(appointment);
+
+        this.setState({appointments: this.state.appointments.map(oldApp => {
+            if (oldApp.id === appointment.id) {
+                return appointment;
+            }
+            return oldApp;
+        })
+        }
+        );
+    }
+
   render() {
     return (
       <div className="App">
@@ -40,6 +54,7 @@ class App extends Component {
             appointments={this.state.appointments}
             deleteAppointment={this.deleteAppointment}
             addAppointment={this.addAppointment}
+            editAppointment={this.editAppointment}
         />
       </div>
     );

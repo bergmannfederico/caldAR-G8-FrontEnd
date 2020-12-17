@@ -11,7 +11,7 @@ class AppointmentItem extends Component {
                 <li>{ boilerId }</li>
                 <li>{ technician }</li>
                 <li>
-                    <button>Edit</button>
+                    <button onClick={this.props.openEdit.bind(this, {id, buildingId, boilerId, technician})}>Edit</button>
                     <button onClick={this.props.deleteAppointment.bind(this, id)}>Delete</button>
                 </li>
             </ul>

@@ -1,12 +1,9 @@
 import React, {Component} from 'react';
 
 class ModalForm extends Component {
-    state = {
-        id: '',
-        buildingId: '',
-        boilerId: '',
-        technician: ''
-    }
+
+    state = {id: '', buildingId: '', boilerId: '', technician: ''};
+
 
     // Sumbit Form
     onSubmit = (e) => {
@@ -21,10 +18,18 @@ class ModalForm extends Component {
         })
     }
 
-    // Edic inputs on chage
+    // Edit inputs on change
     handleChange = e => this.setState({[e.target.name]: e.target.value});
 
+    componentWillReceiveProps(nextProps) {
+        // You don't have to do this check first, but it can help prevent an unneeded render
+        if (nextProps.appointment !== this.state) {
+            this.setState(nextProps.appointment);
+        }
+    }
+
     render() {
+
         return (
             <form onSubmit={this.onSubmit}>
                 <input
@@ -33,6 +38,7 @@ class ModalForm extends Component {
                     placeholder="Service Number"
                     value={this.state.id}
                     onChange={this.handleChange}
+                    readOnly={this.props.appointment.id!==''?"readOnly":''}
                 />
                 <input
                     type="number"
