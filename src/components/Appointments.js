@@ -6,7 +6,7 @@ import Modal from "./Modal";
 class Appointments extends Component {
   state = {
     show: false,
-    appointment: { id: "", buildingId: "", boilerId: "", technician: "" }
+    appointment: { id: "", buildingId: "", boilerId: "", technician: "" },
   };
 
   showModal = (appointment, action) => {
@@ -17,15 +17,13 @@ class Appointments extends Component {
     this.setState({ show: false });
   };
 
-    addEditAppointment = (appointment) => {
-        if(this.state.action === 'edit'){
-            this.props.editAppointment(appointment);
-        }else{
-            this.props.addAppointment(appointment);
-        }
-
+  addEditAppointment = (appointment) => {
+    if (this.state.action === "edit") {
+      this.props.editAppointment(appointment);
+    } else {
+      this.props.addAppointment(appointment);
     }
-
+  };
 
   render() {
     return (
@@ -53,12 +51,19 @@ class Appointments extends Component {
         />
         <button
           type="button"
-          onClick={
-              () => {
-              this.setState({ action: 'add', show: true, appointment: { id: "", buildingId: "", boilerId: "", technician: "" } });
-              //console.log(appointment)
-          }
-          }
+          onClick={() => {
+            this.setState({
+              action: "add",
+              show: true,
+              appointment: {
+                id: "",
+                buildingId: "",
+                boilerId: "",
+                technician: "",
+              },
+            });
+            //console.log(appointment)
+          }}
         >
           Add Appointment
         </button>
